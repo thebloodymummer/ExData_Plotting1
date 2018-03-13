@@ -9,7 +9,7 @@ rawData <- rawData[rawData$Date %in% c("1/2/2007","2/2/2007"),]
 DateTime <-strptime(paste(rawData$Date, rawData$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 
 #Initiate PNG filename
-png(filename = "plot3.png")
+png(filename = "plot3.png", width = 480, height = 480)
 
 #Plot Initial Structure
 plot(DateTime, rawData$Sub_metering_1, type="n", col= "blue", xlab="", ylab="Energy sub metering")
