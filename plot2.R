@@ -9,7 +9,7 @@ rawData <- rawData[rawData$Date %in% c("1/2/2007","2/2/2007"),]
 DateTime <-strptime(paste(rawData$Date, rawData$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 
 #Initiate PNG filename
-png(filename = "plot2.png")
+png(filename = "plot2.png", width = 480, height = 480)
 
 #Plot Graph 
 plot(DateTime, rawData$Global_active_power, col = "black", type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
