@@ -9,7 +9,7 @@ rawData <- rawData[rawData$Date %in% c("1/2/2007","2/2/2007"),]
 DateTime <-strptime(paste(rawData$Date, rawData$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 
 #Initiate PNG filename
-png(filename = "plot4.png")
+png(filename = "plot4.png", width = 480, height = 480)
 
 #Set up 2 x 2 view
 par(mfrow = c(2, 2))
