@@ -1,5 +1,5 @@
-#Read and subset Raw data to relevant dates
-rawData <- read.table(text = grep("^[1,2]/2/2007", readLines("./ExData_Plotting1-master/household_power_consumption.txt"), 
+#Read and subset Raw data to relevant dates - Set to working directory where file was downloaded
+rawData <- read.table(text = grep("^[1,2]/2/2007", readLines("household_power_consumption.txt"), 
                                   value = TRUE), sep = ";", header = TRUE, , na.strings = "?", col.names = c("Date", "Time", 
                                   "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity", "Sub_metering_1", 
                                   "Sub_metering_2", "Sub_metering_3"))
@@ -9,7 +9,7 @@ rawData <- rawData[rawData$Date %in% c("1/2/2007","2/2/2007"),]
 DateTime <-strptime(paste(rawData$Date, rawData$Time, sep=" "),"%d/%m/%Y %H:%M:%S")
 
 #Initiate PNG filename
-png(filename = "./ExData_Plotting1-master/plot4.png")
+png(filename = "plot4.png")
 
 #Set up 2 x 2 view
 par(mfrow = c(2, 2))
